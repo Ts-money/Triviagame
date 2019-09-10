@@ -33,7 +33,7 @@ var TriviaGame = [{
     answer: ["SSBlue", "SSJ4", "Great Ape Baby", "SSB2"],
     correct: "3",
 }, {
-    question: "Who defedate Cell?",
+    question: "Who defedated Cell?",
     answer: ["Trunk", "Gohan", "Android18", "Mr.Satan"],
     correct: "1",
 }, {
