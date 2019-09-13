@@ -8,38 +8,47 @@ var indexQandA = 0;
 var answered = false; //variable to stop the timer if user has clicked an answer
 var correct;
 var interval;
+
 var TriviaGame = [{
     question: "what is Goku's real name?",
     answer: ["Kakarot", "Yamcha", "Vegita", "piccolo"],
     correct: "0",
+    gif: "Goku.gif",
 }, {
     question: "What was the name of Goku's Father?",
     answer: ["Berus", "Bardok", "Master Roshi", "Gohan"],
     correct: "1",
+    gif: "bardock.gif",
 }, {
     question: "Who trained Gohan when his father Goku was away from home?",
     answer: ["Vegeta", "Krilan", "Chi-Chi", "Piccolo"],
     correct: "3",
+    gif: "Piccolo.gif",
 }, {
     question: "Who destroyed the Planet Vegeta?",
     answer: ["Berus", "Frieza", "Broly", "Cell"],
     correct: "1",
+    gif: "Freiza.gif",
 }, {
     question: "Goku's highest level transformation?",
     answer: ["SSBlue", "SSGOD", "MUI", "SS4"],
     correct: "2",
+    gif: "ultrainstinct.gif",
 }, {
     question: "Vegeta's highest level transformation?",
     answer: ["SSBlue", "SSJ4", "Great Ape Baby", "SSB2"],
     correct: "3",
+    gif: "SSB2V.gif",
 }, {
     question: "Who defedated Cell?",
     answer: ["Trunk", "Gohan", "Android18", "Mr.Satan"],
     correct: "1",
+    gif: "Gohan.gif",
 }, {
     question: "Strongest Oppenant Goku battled?",
     answer: ["Berus", "Broly", "Jiren", "Zamasu"],
     correct: "2",
+    gif: "Jiren.gif",
 }];
 
 
@@ -80,6 +89,7 @@ function timer() {
 }
 // Loads the next question.
 function loadQuestion() {
+    $("#imagegif").attr("src", "");
 // This checks if the user ran out of questions.
     if (indexQandA === TriviaGame.length) {
         gameOver();
@@ -119,6 +129,9 @@ function handle(index) {
     } else {
         incorrect();
     }
+    var imageSrc = "assets/images/" + TriviaGame[indexQandA - 1].gif;
+    // it wasnt working earlier cuz u dont have gifs alla the yeh u dont have all of them like kardok s
+    $("#imagegif").attr("src", imageSrc);
 }
 // This handles the question and tells the user if they selected the correct answer and loads next question in 5 second.
 function handleCorrect() {
